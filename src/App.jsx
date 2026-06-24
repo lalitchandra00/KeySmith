@@ -51,7 +51,17 @@ function App() {
           />
           <button className = "bg-blue-400 rounded-r-2xl p-2">Copy</button>
         </div>
-      </div>D
+        <br />
+        <div className = "flex">
+          <input 
+          type="range"
+          min = {8}
+          max = {20}
+          value = {length}
+          onChange = 
+           />
+        </div>
+      </div>
     </div>
     </>
   )
