@@ -58,7 +58,7 @@ function App() {
             readOnly
             ref={passref}
           />
-          <button className = "bg-blue-400 rounded-r-2xl p-2 active:scale-105"
+          <button className = "bg-blue-400 rounded-r-2xl p-2 active:bg-blue-600"
           onClick ={copypass}
           >Copy</button>
         </div>
