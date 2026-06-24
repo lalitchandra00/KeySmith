@@ -1,8 +1,4 @@
-
-
-
-
-import { useState , useCallback, useEffect} from 'react'
+import { useState , useCallback, useEffect, useRef} from 'react'
 import './App.css'
 
 function App() {
@@ -34,10 +30,17 @@ function App() {
     setPassword(pass)
   }
 
+  const copypass = useCallback(()=> {
+    window.navigator.clipboard.writeText(Password)
+  },[Password])
 
   const password = useCallback(genpass,[Length, NumAllowed, CharAllowed, setPassword])
 
-  useEffect(()=>{password()}, [Length, NumAllowed, CharAllowed, password])
+  useEffect(()=>{password()}, [Length, NumAllowed, CharAllowed, setPassword])
+  //useEffect is a React Hook used to run code automatically when a component loads or when specific state values change.
+
+  const passref = useRef(null)
+
 
   return (
     <>
@@ -53,8 +56,11 @@ function App() {
             className = "rounded-l-2xl bg-amber-200  w-130 h-10 flex justify-center mx-auto p-3 mr-0"
             placeholder = "password"
             readOnly
+            ref={passref}
           />
-          <button className = "bg-blue-400 rounded-r-2xl p-2">Copy</button>
+          <button className = "bg-blue-400 rounded-r-2xl p-2 active:scale-105"
+          onClick ={copypass}
+          >Copy</button>
         </div>
         <br />
         <div className = "flex justify-between">

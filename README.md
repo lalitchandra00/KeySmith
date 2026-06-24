@@ -3,6 +3,10 @@
 
 KeySmith is a simple password generator built using React and Tailwind CSS. It helps users generate random and secure passwords based on selected options.
 
+## Project Preview
+
+![KeySmith UI](./webpage.png)
+
 ## Features
 
 * Generate random passwords
@@ -23,4 +27,5 @@ KeySmith is a simple password generator built using React and Tailwind CSS. It h
 ## Project Purpose
 
 This project was built to practice React Hooks, state management, event handling, and Tailwind CSS while creating a useful utility application.
+
 
